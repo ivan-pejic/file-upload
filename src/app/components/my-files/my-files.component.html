@@ -1,0 +1,46 @@
+<div class="wrapper" *ngIf="user.id != 0">
+  <div class="file-upload-wrapper">
+    <label for="file-upload" class="custom-file-upload">
+      <mat-icon>upload</mat-icon> Upload Files(s)</label
+    >
+    <input
+      id="file-upload"
+      type="file"
+      multiple
+      (change)="uploadFiles($event)"
+    />
+
+    <hr />
+  </div>
+
+  <div *ngFor="let file of myFiles">
+    <div class="file-wrapper">
+      {{ file.name
+      }}<button
+        class="file-interact"
+        mat-raised-button
+        color="warn"
+        (click)="deleteFile(file.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button
+        class="file-interact"
+        mat-raised-button
+        color="accent"
+        (click)="downloadFile(file.name)"
+      >
+        <mat-icon>download</mat-icon></button
+      ><button
+        class="file-interact"
+        mat-raised-button
+        color="accent"
+        (click)="editFile(file)"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+    <hr />
+  </div>
+  <div *ngIf="myFiles[0] == null">No files for user</div>
+</div>

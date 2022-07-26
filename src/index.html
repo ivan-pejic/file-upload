@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>File Upload</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="File management software" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/png;base64,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"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+    <app-root></app-root>
+  </body>
+</html>

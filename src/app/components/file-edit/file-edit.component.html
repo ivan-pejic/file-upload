@@ -1,0 +1,39 @@
+<div class="wrapper">
+  <mat-card>
+    <mat-card-title>Edit file name: </mat-card-title>
+    <mat-card-content>
+      <form (ngSubmit)="onSubmit()" name="form" [formGroup]="form">
+        <div>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>File name</mat-label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              [(ngModel)]="tempName"
+              formControlName="filename"
+              matInput
+              placeholder="Enter file name"
+              required
+            />
+            <mat-error *ngIf="!form.controls['filename'].valid">
+              File name is required
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </form>
+
+      <button
+        [disabled]="!tempName.length"
+        [mat-dialog-close]="data"
+        mat-flat-button
+        color="primary"
+        (click)="onSubmit()"
+      >
+        Save</button
+      ><button (click)="onNoClick()" mat-flat-button color="warn">
+        Cancel
+      </button>
+    </mat-card-content>
+  </mat-card>
+</div>

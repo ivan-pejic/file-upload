@@ -1,0 +1,29 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  margin: 0 2rem;
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
+
+.name {
+  margin: auto 2rem;
+  text-align: center;
+  font-size: 1rem;
+}
+.mat-icon {
+  vertical-align: middle;
+}
+p {
+  vertical-align: middle;
+}
+
+.accent {
+  background-color: black;
+  color: white;
+  transition: 0.5s;
+  box-shadow: 0 0 0 0.2rem white;
+}

@@ -1,0 +1,38 @@
+.wrapper {
+  margin: 5rem auto;
+  max-width: 15rem;
+  text-align: center;
+}
+
+.msg {
+  text-align: center;
+  background-color: lightblue;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.msg {
+  margin-bottom: 1rem;
+  max-width: 15rem;
+  text-align: center;
+  background-color: lightblue;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  height: 2rem;
+  max-height: fit-content;
+  line-height: 2rem;
+}
+
+.err {
+  color: red;
+}
+
+.succ {
+  color: black;
+}
+
+.changePassword {
+  min-width: 15rem;
+}

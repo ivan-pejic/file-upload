@@ -1,0 +1,69 @@
+<div class="wrapper" *ngIf="user.id != 0">
+  <h1>Profile</h1>
+  <img
+    [src]="userImage"
+    height="100px"
+    width="100px"
+    alt="User profile image"
+  />
+  <h2>{{ user.name }}</h2>
+  <button
+    mat-raised-button
+    class="changePassword"
+    [color]="isHidden ? 'primary' : 'warn'"
+    (click)="changePassword()"
+  >
+    {{ isHidden ? "Change Password" : "Cancel" }}
+  </button>
+  <div class="wrapper" [hidden]="isHidden">
+    <form
+      (ngSubmit)="onSubmit()"
+      name="form"
+      [formGroup]="form"
+      #formDirective="ngForm"
+    >
+      <div>
+        <mat-card>
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>Old password</mat-label>
+            <input
+              formControlName="oldPassword"
+              matInput
+              type="password"
+              required
+            />
+            <mat-error *ngIf="!form.controls['oldPassword'].valid">
+              Old password is required
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="full-width" appearance="outline">
+            <mat-label>New password</mat-label>
+            <input
+              formControlName="newPassword"
+              matInput
+              type="password"
+              required
+            />
+            <mat-error *ngIf="!form.controls['newPassword'].valid">
+              New password is required
+            </mat-error>
+          </mat-form-field>
+
+          <div
+            [ngClass]="[
+              message.status == 'MESSAGE_ERROR' ? 'msg err' : 'msg succ'
+            ]"
+            *ngIf="message.status != 'MESSAGE_NOSTATE'"
+          >
+            {{ message.message }}
+          </div>
+
+          <button color="primary" mat-raised-button type="submit">
+            Save
+          </button></mat-card
+        >
+      </div>
+    </form>
+  </div>
+</div>

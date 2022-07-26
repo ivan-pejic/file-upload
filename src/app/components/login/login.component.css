@@ -1,0 +1,33 @@
+label input {
+  margin-left: 1rem;
+}
+
+mat-card {
+  max-width: 40rem;
+  margin: 5rem auto;
+  text-align: center;
+  max-height: 40rem;
+}
+
+.full-width {
+  width: 80%;
+}
+.msg {
+  margin-bottom: 2rem;
+  margin-left: 4rem;
+  max-width: 30rem;
+  text-align: center;
+  background-color: lightblue;
+  border: 1px solid;
+  border-radius: 0.5rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+
+.err {
+  color: red;
+}
+
+.succ {
+  color: black;
+}
